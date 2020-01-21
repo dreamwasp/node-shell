@@ -1,5 +1,3 @@
-// import { fstat } from "fs";
-
 const fs = require('fs');
 
 let ls = () => fs.readdir('./','utf8',(err,files)=>{
