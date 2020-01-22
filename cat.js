@@ -1,10 +1,13 @@
 const fs = require('fs');
-console.log(fs);
-const ls = require('./ls');
 
-let func = () => fs.readFile(ls, (err, data) => {
-  if (err) throw err;
-  console.log(data);
+let cat = (arg) => fs.readFile(arg, 'utf8', (err, data) => {
+  arg = `./${arg}`
+  if (err) {
+    throw err;
+  } else {
+    process.stdout.write(data);
+  }
+  process.stdout.write('\nprompt > ')
 });
 
-func();
+module.exports = cat;
